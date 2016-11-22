@@ -6,7 +6,7 @@ This is a simple plugin that integrates CGAL 4.9 to UE4. The author is in no way
 
 Installation Instructions:</br>
 
--Download the lastest release <a href="https://github.com/armabon/UE4_CGAL/blob/master/Build/CGAL.zip">here</a></br>
+-Download the lastest release <a href="https://github.com/armabon/UE4_CGAL/raw/master/Build/CGAL.zip">here</a></br>
 -Unzip this folder</br>
 -Copy the CGAL folder into your c++ project plugin folder</br>
 -Launch the project</br>
