@@ -13,3 +13,5 @@ Installation Instructions:</br>
 -Navigate to Edit->Plugins and find the CGAL plugin in the Computer Vision category under the Project plugins</br>
 -Check enabled and restart the editor</br>
 -Be sure to include the 'CGAL' public dependency in your project's Build.CS file
+
+<i>Tutorial for setup your project with the plugin comming soon</i>
