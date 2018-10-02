@@ -12,16 +12,16 @@ public class CGAL : ModuleRules
         get { return Path.GetFullPath(Path.Combine(ModulePath, "../../ThirdParty/")); }
     }
 
-	public CGAL(TargetInfo Target)
+	public CGAL(ReadOnlyTargetRules Target) : base(Target)
 	{
-        Definitions.Add("WIN32");
-        Definitions.Add("_WINDOWS");
-        Definitions.Add("_CRT_SECURE_NO_DEPRECATE");
-        Definitions.Add("_SCL_SECURE_NO_DEPRECATE");
-        Definitions.Add("_CRT_SECURE_NO_WARNINGS");
-        Definitions.Add("_SCL_SECURE_NO_WARNINGS");
-        Definitions.Add("CGAL_USE_MPFR");
-        Definitions.Add("CGAL_USE_GMP");
+        PublicDefinitions.Add("WIN32");
+        PublicDefinitions.Add("_WINDOWS");
+        PublicDefinitions.Add("_CRT_SECURE_NO_DEPRECATE");
+        PublicDefinitions.Add("_SCL_SECURE_NO_DEPRECATE");
+        PublicDefinitions.Add("_CRT_SECURE_NO_WARNINGS");
+        PublicDefinitions.Add("_SCL_SECURE_NO_WARNINGS");
+        PublicDefinitions.Add("CGAL_USE_MPFR");
+        PublicDefinitions.Add("CGAL_USE_GMP");
 
         // Startard Module Dependencies
         PublicDependencyModuleNames.AddRange(new string[] { "Core" });
@@ -35,7 +35,7 @@ public class CGAL : ModuleRules
 
         // Get Library Path
         string LibPath = "";
-        bool isdebug = Target.Configuration == UnrealTargetConfiguration.Debug && BuildConfiguration.bDebugBuildsActuallyUseDebugCRT;
+        bool isdebug = Target.Configuration == UnrealTargetConfiguration.Debug && Target.bDebugBuildsActuallyUseDebugCRT;
         if (Target.Platform == UnrealTargetPlatform.Win64)
         {
             LibPath = Path.Combine(CGALPath, "libraries", "Win64");
@@ -74,6 +74,6 @@ public class CGAL : ModuleRules
             }
         }
 
-        Definitions.Add(string.Format("WITH_CGAL_BINDING={0}", isLibrarySupported ? 1 : 0));
+        PublicDefinitions.Add(string.Format("WITH_CGAL_BINDING={0}", isLibrarySupported ? 1 : 0));
     }
 }
