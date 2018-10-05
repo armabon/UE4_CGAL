@@ -14,6 +14,8 @@ public class CGAL : ModuleRules
 
 	public CGAL(ReadOnlyTargetRules Target) : base(Target)
 	{
+        
+        bEnableUndefinedIdentifierWarnings = false;
         PublicDefinitions.Add("WIN32");
         PublicDefinitions.Add("_WINDOWS");
         PublicDefinitions.Add("_CRT_SECURE_NO_DEPRECATE");
